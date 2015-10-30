@@ -15,12 +15,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedometer" translatesAutoresizingMaskIntoConstraints="NO" id="wiq-NN-sao">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="3Xk-fB-4m0"/>
+                                    <constraint firstAttribute="height" constant="300" id="yYf-6V-ff4"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="needles" translatesAutoresizingMaskIntoConstraints="NO" id="PBb-nh-TIn">
+                                <rect key="frame" x="213" y="212" width="175" height="175"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="2sX-4u-lss"/>
+                                    <constraint firstAttribute="width" constant="175" id="lE8-2o-peg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="PBb-nh-TIn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="0.5" id="Qeb-gz-749"/>
+                            <constraint firstItem="wiq-NN-sao" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lpw-se-Yq5"/>
+                            <constraint firstItem="wiq-NN-sao" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="umk-hi-DaQ"/>
+                            <constraint firstItem="PBb-nh-TIn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-0.5" id="vhN-QL-75k"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="adx-7H-S7G" appends="YES" id="ZAb-C4-9im"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="needleImage" destination="PBb-nh-TIn" id="WlV-Xf-edZ"/>
+                        <outlet property="recognizer" destination="adx-7H-S7G" id="WTJ-Bx-TgE"/>
+                        <outlet property="speedoImage" destination="wiq-NN-sao" id="A62-Nr-iag"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="adx-7H-S7G">
+                    <connections>
+                        <action selector="screenTouched:" destination="BYZ-38-t0r" id="Bzv-CD-RTC"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="needles" width="400" height="400"/>
+        <image name="speedometer" width="300" height="300"/>
+    </resources>
 </document>
